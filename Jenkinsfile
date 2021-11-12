@@ -13,6 +13,7 @@ pipeline {
 		{
 			steps{
 				script{
+					sh "cd MyFirstAngular"
 					sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
 				}
 			}
