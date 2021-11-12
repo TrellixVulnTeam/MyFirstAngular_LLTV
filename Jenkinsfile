@@ -13,9 +13,9 @@ pipeline {
 		{
 			steps{
 				script{
-					sh "cd MyFirstAngular"
+					sh "cd MyFirstAngular/"
 					sh "ls > ls_output"
-					sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
+					sh "ansible-playbook MyFirstAngular/ansible/build.yml -i MyFirstAngular/ansible/inventory/host.yml"
 				}
 			}
 		}
