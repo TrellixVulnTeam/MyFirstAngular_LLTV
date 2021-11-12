@@ -15,7 +15,7 @@ pipeline {
 				script{
 					sh "cd MyFirstAngular/"
 					sh "ls > ls_output"
-					sh "ansible-playbook MyFirstAngular/ansible/build.yml -i MyFirstAngular/ansible/inventory/host.yml"
+					sh "ansible-playbook MyFirstAngular/ansible/build.yml -i MyFirstAngular/ansible/inventory/host.yml --ask-become-pass"
 				}
 			}
 		}
