@@ -24,7 +24,7 @@ pipeline {
 		{
 		  steps{
 		    script{
-		      sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml"
+		      sh "ansible-playbook MyFirstAngular/ansible/docker.yml -i MyFirstAngular/ansible/inventory/host.yml"
 		    }
 		  }
 		}
