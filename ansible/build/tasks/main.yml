@@ -3,4 +3,4 @@
 #buildproject
   - name: build app
     shell: ng build --prod
-    ignore_errors: true
+    #ignore_errors: true
