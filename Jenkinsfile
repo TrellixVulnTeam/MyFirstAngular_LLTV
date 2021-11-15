@@ -17,14 +17,21 @@ pipeline {
 				}
 			}
 		}
-		
+
 		stage('docker')
 		{
-		  steps{
-		    script{
-		      sh "ansible-playbook MyFirstAngular/ansible/docker.yml -i MyFirstAngular/ansible/inventory/host.yml"
-		    }
-		  }
+			steps{
+				script{
+					sh "ansible-playbook MyFirstAngular/ansible/docker.yml -i MyFirstAngular/ansible/inventory/host.yml"
+				}
+			}
+		}
+
+		stage ('Email Notification') 
+		{
+			steps {
+				mail bcc: '', body: 'your pipeline has been built', cc: '', from: '', replyTo: '', subject: 'Build', to: 'arthurwilliam.ngassanguesseu@esprit.tn'
+			}
 		}
 
 	}
