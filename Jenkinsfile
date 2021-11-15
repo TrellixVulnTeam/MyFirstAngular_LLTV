@@ -27,10 +27,19 @@ pipeline {
 			}
 		}
 
+		stage('dockerhub') 
+		{
+		 steps{
+			 script{
+				 sh "ansible-playbook MyFirstAngular/ansible/registry.yml -i MyFirstAngular/ansible/inventory/host.yml"
+			 }
+			}
+		}
+
 		stage ('Email Notification') 
 		{
 			steps {
-				mail bcc: '', body: 'your pipeline has been built', cc: '', from: '', replyTo: '', subject: 'Build', to: 'arthurwilliam.ngassanguesseu@esprit.tn'
+				mail bcc: '', body: 'your pipeline has been built successefully.', cc: '', from: '', replyTo: '', subject: 'Build', to: 'arthurwilliam.ngassanguesseu@esprit.tn'
 			}
 		}
 

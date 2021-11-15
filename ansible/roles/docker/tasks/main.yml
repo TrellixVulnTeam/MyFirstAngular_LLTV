@@ -2,7 +2,7 @@
 # tasks file for docker
 - name: create image docker
   docker_image:
-    name: devops
+    name: MyFirstAngular
     build:
       path: /var/lib/jenkins/workspace/MyFirstAngular-pipeline/MyFirstAngular
       pull: no
@@ -12,7 +12,7 @@
 - name: run container docker
   docker_container:
     name: myapp_container
-    image: devops:latest
+    image: myfirstangular:latest
     state: started
     recreate: true
     ports:
